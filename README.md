@@ -24,8 +24,8 @@ nds.dispatchData(dataFold_k.traning_data)
 
 # custom option
 nds.dispatchData(dataFold_k.traning_data; 
-    shuffle_enable::Bool=false,
-    dispatch_size::Integer=1, 
-    data_selector::String="rgb1", 
+    shuffle_enable=false,
+    dispatch_size=1, 
+    data_selector="rgb1", 
     img_outputsize=[128 128])
 ```
