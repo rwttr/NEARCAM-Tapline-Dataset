@@ -10,8 +10,8 @@ import .NearcamTaplineDataset as nds
 single fold option also is avaiable
 ```julia
 # build/initialize dataset
-nds.init() #default dataset_path
-nds.init(datapath = "full path to dataset", kfold_enable=false) # custom dataset_path with single fold option
+nds.init() #default dataset path
+nds.init(datapath = "full path to dataset", kfold_enable=false) # custom path with single fold option
 
 # accessing data
 nds.datafold_k.training_data # k= 1,2,3,4,5, single_fold mode k=1
