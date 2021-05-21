@@ -3,7 +3,7 @@
 
 ## Intend Use within REPL
 ```julia
-include("NearcamTaplineDataset.jl)
+include("NearcamTaplineDataset.jl")
 import .NearcamTaplineDataset as nds
 ```
 ## Data are arranged in K-Fold (k=5) 
