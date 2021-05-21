@@ -146,14 +146,14 @@ function init(;datapath::String=dataset_path, kfold_enable::Bool=true)
     # Extern Dataset Arranged in Fold ::DataFold
     if kfold_enable
         # build k=5
-        global dataFold_1 = buildDatafold(1, dataset_path);
-        global dataFold_2 = buildDatafold(2, dataset_path);
-        global dataFold_3 = buildDatafold(3, dataset_path);
-        global dataFold_4 = buildDatafold(4, dataset_path);
-        global dataFold_5 = buildDatafold(5, dataset_path);
+        global datafold_1 = buildDatafold(1, dataset_path);
+        global datafold_2 = buildDatafold(2, dataset_path);
+        global datafold_3 = buildDatafold(3, dataset_path);
+        global datafold_4 = buildDatafold(4, dataset_path);
+        global datafold_5 = buildDatafold(5, dataset_path);
     else
         # build single fold ; fold_id = 1
-        global dataFold_single = buildDatafold(1, dataset_path);         
+        global datafold_single = buildDatafold(1, dataset_path);         
     end
 end
 
