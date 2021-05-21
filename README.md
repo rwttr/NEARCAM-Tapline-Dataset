@@ -9,10 +9,10 @@ nds.init()
 ```
 ## Data are arranged in K-Fold (k=5) ps. single fold option is avaiable
 ```
-dataFold_k.training_data 
-dataFold_k.testing_data 
+nds.datafold_k.training_data 
+nds.datafold_k.testing_data 
 ```
 ## Dispatching Datafold
 ```
-dispatchData(dataFold_k.traning_data)
+nds.dispatchData(dataFold_k.traning_data)
 ```
