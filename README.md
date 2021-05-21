@@ -23,7 +23,7 @@ nds.datafold_k.testing_data
 nds.dispatchData(dataFold_k.traning_data)
 
 # custom option
-nds.dispatchData(dataFold_k.traning_data; ; 
+nds.dispatchData(dataFold_k.traning_data; 
     shuffle_enable::Bool=false,
     dispatch_size::Integer=1, 
     data_selector::String="rgb1", 
