@@ -289,7 +289,7 @@ function dispatchData(datafold::DataStore;
             temp_img = Images.load(datafold.label_px_imgURL[dispatch_indx_record]);
             temp_img_pp = rescalePxImg(temp_img, [w h]);
             temp_img_pp = Images.channelview(temp_img_pp); # Channel x W x H
-            temp_img_pp = reshape(loaded_px, (1, w, h));
+            temp_img_pp = reshape(temp_img_pp, (1, w, h));
             temp_img_pp = PermutedDimsArray(temp_img_pp, (2, 3, 1)); # WHC
             temp_img_pp = Flux.unsqueeze(temp_img_pp, 4); # W.H.C.N
             loaded_px = cat(temp_img_pp, loaded_px; dims=4);
