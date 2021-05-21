@@ -1,5 +1,5 @@
 # NEARCAM Tapline Dataset
- Julia API for Near-Range RGB-D Images of Rubber Tapping Line  
+ Julia API for Near-Range RGB-D Rubber Tapping Line Images 
 
 ## Intend Use within REPL
 ```julia
@@ -19,5 +19,13 @@ nds.datafold_k.testing_data
 ```
 ## Dispatching Data
 ```julia
+# default option
 nds.dispatchData(dataFold_k.traning_data)
+
+# custom option
+nds.dispatchData(dataFold_k.traning_data; ; 
+    shuffle_enable::Bool=false,
+    dispatch_size::Integer=1, 
+    data_selector::String="rgb1", 
+    img_outputsize=[128 128])
 ```
