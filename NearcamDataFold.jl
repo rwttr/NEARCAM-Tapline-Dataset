@@ -299,16 +299,19 @@ function dispatchData(datafold::DataStore;
         end
     end
     
-    imgdata_loader = Flux.Data.DataLoader(loaded_img;
-     batchsize=dispatch_size, shuffle=shuffle_enable);
+    # imgdata_loader = Flux.Data.DataLoader(loaded_img;
+    #  batchsize=dispatch_size, shuffle=shuffle_enable);
 
-    labelbbox_loader = Flux.Data.DataLoader(loaded_bbox;
+    # labelbbox_loader = Flux.Data.DataLoader(loaded_bbox;
+    # batchsize=dispatch_size, shuffle=shuffle_enable);
+
+    # labelpx_loader = Flux.Data.DataLoader(loaded_px;
+    # batchsize=dispatch_size, shuffle=shuffle_enable);
+
+    outputDL = Flux.Data.DataLoader((loaded_img,loaded_bbox,loaded_px),
     batchsize=dispatch_size, shuffle=shuffle_enable);
 
-    labelpx_loader = Flux.Data.DataLoader(loaded_px;
-    batchsize=dispatch_size, shuffle=shuffle_enable);
-
-    return imgdata_loader, labelbbox_loader, labelpx_loader;
+    return outputDL;
 end
 
 function resetDispatchRecord()
