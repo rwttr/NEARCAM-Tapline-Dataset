@@ -7,7 +7,7 @@ include("NearcamTaplineDataset.jl")
 import .NearcamTaplineDataset as nds
 ```
 ## Data are arranged in K-Fold (k=5) 
-single fold option also is avaiable
+single fold option also avaiable
 ```julia
 # build/initialize dataset
 nds.init() #default dataset path
