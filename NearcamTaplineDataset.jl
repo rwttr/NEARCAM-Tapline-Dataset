@@ -21,6 +21,6 @@ export showImageSample
 
 const kfold_ksize = 5;
 
-include("NearcamDataFold.jl")
+include("nearcamDataFold.jl")
 
 end
