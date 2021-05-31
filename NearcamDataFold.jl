@@ -330,3 +330,24 @@ function showImageSample(sampleImage::Array{T,3}, bbox::Matrix{S}) where {T <: R
     ); # left top right bottom
 end
 
+# utils fn : estimate anchors size with dataset
+function estimateAnchors(ds::NearcamTaplineDataset.DataStore, 
+    network_inputsize,
+    image_annotatedsize)
+    # network inputsize : [w h]
+    # image_annotatedsize : [w h]
+
+    # produce 3 anchor box at dataset image size
+    mean_w = Statistics.mean(ds.label_bbox[i][3] for i = 1:length(ds.label_bbox));
+    mean_h = Statistics.mean(ds.label_bbox[i][4] for i = 1:length(ds.label_bbox));
+    mean_w, mean_h = [mean_w mean_h] .* (network_inputsize ./ image_annotatedsize)
+    # mean_ratio = mean_w/mean_h;
+    # mean_ratio = Statistics.round(mean_ratio,digits=2);
+    # box in w h format
+    box1 = Statistics.round.([mean_w mean_h]); # broadcast round to elements
+    box2 = Statistics.round.(box1 .* [0.825 1.125]);   # mutate box1 aspect ratio 
+    box3 = Statistics.round.(box1 .* [1.125 0.825]);   # mutate box1 aspect ratio 
+
+    # resize to network input_size
+    return (box1, box2, box3)
+end

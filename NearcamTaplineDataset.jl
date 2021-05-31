@@ -18,6 +18,7 @@ export dispatchData
 export resetDispatchRecord
 export getDispatchRecord
 export showImageSample
+export estimateAnchors
 
 const kfold_ksize = 5;
 
