@@ -6,6 +6,7 @@ import FileIO
 import Images
 import Statistics
 import Flux # dataloader
+import Random
 import ImageView # Visualize Sample
 
 #global var
@@ -23,5 +24,4 @@ export estimateAnchors
 const kfold_ksize = 5;
 
 include("nearcamDataFold.jl")
-
 end
